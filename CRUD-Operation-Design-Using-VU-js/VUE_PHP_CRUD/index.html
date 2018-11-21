@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Vue.js CRUD PHP Mysql</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Style.css" type="text/css">
+    </head>
+    <body>
+        <div id="root">
+            <div class="container">
+                <h1 class="fleft">List of users</h1>
+                <button class="fright addNew" @click="showingAddModel = true;">Add New</button>
+                <div class="clear"></div>
+                <hr>
+                <table class="list">
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>uu</td>
+                        <td>ee</td>
+                        <td>mm</td>
+                        <td><button @click="showingEditModel = true;">Edit</button></td>
+                        <td><button @click="showingDeleteModel = true;">Delete</button></td>
+                    </tr>
+                </table>
+            </div>
+            <!--Start Add New Model-->
+            <div class="model" id="addModel" v-if="showingAddModel">
+                <div class="modelContainer">
+                    <div class="modelHeading">
+                        <p class="fleft">Add New User</p>
+                        <button class="fright close" @click="showingAddModel = false;">x</button>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="modelContent">
+                        <table class="form">
+                            <tr>
+                                <th>Username</th>
+                                <th> : </th>
+                                <td> <input type="text" name=""> </td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <th> : </th>
+                                <td> <input type="text" name=""> </td>
+                            </tr>
+                            <tr>
+                                <th>Mobile</th>
+                                <th> : </th>
+                                <td> <input type="text" name=""> </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <td> <button @click="showingAddModel = false;">Save</button> </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--End Add New Model-->
+            <!--Start Edit This User Model-->
+            <div class="model" id="editModel" v-if="showingEditModel">
+                <div class="modelContainer">
+                    <div class="modelHeading">
+                        <p class="fleft">Edit This User</p>
+                        <button class="fright close" @click="showingEditModel = false;">x</button>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="modelContent">
+                        <table class="form">
+                            <tr>
+                                <th>Username</th>
+                                <th> : </th>
+                                <td> <input type="text" name=""> </td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <th> : </th>
+                                <td> <input type="text" name=""> </td>
+                            </tr>
+                            <tr>
+                                <th>Mobile</th>
+                                <th> : </th>
+                                <td> <input type="text" name=""> </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <td> <button @click="showingEditModel = false;">Update</button> </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--End Edit This User Model-->
+            <!--Start Delete This User Model-->
+            <div class="model" id="deleteModel" v-if="showingDeleteModel">
+                <div class="modelContainer">
+                    <div class="modelHeading">
+                        <p class="fleft">Delete This User</p>
+                        <button class="fright close" @click="showingDeleteModel = false;">x</button>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="modelContent">
+                        <P>Are You Sure Want to Delete....</P>
+                        <br><br><br><br><br>
+                        <button @click="showingDeleteModel = false;">Yes</button>
+                        <button @click="showingDeleteModel = false;"s>No</button>
+                    </div>
+                </div>
+            </div>
+            <!--End Delete This User Model-->
+        </div>
+        <script type="text/javascript" src="vue.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>
